@@ -51,11 +51,6 @@
     transition-duration: 0.3s;
     cursor: pointer;
 
-    &:hover {
-        box-shadow: 4px 3px 11px 6px rgb(200, 152, 44);
-        transform: translateY(-3px);
-    }
-
     &-thumb-container {
         background-color: #000;
         position: relative;
@@ -63,7 +58,7 @@
         color: #fff;
         text-align: center;
     }
-
+    
     &-thumbnail {
         position: absolute;
         top: 0;
@@ -99,5 +94,10 @@
         width: 20px;
         margin-right: 10px;
     }
+
+    &:hover {
+        box-shadow: 4px 3px 11px 6px rgb(200, 152, 44);
+        transform: translateY(-3px);
+    }    
 
 }

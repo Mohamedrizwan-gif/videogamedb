@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { HttpService } from 'src/app/services/http.service';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit, OnDestroy {
   public gameRating = 0;
   public gameId!: string;
   public game!: Game;
@@ -30,13 +30,12 @@ export class DetailsComponent implements OnInit {
   }
 
   getGameDetails(id: string): void {
-    this.gameSub = this.httpService.getGameList(id).subscribe((gameRes: any) => {
-      console.log(gameRes)
+    this.gameSub = this.httpService.getGameDetails(id).subscribe((gameRes: Game) => {
       this.game = gameRes;
 
       setTimeout(() => {
         this.gameRating = this.game.metacritic;
-      });
+      }, 1000);
     });
   }
 
