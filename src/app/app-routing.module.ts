@@ -6,7 +6,7 @@ import { DetailsComponent } from "./components/details/details.component";
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent 
+        component: HomeComponent
     },
     {
         path: 'search/:game-search',
@@ -19,7 +19,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, { useHash: true })],
     exports: [RouterModule]
 })
 
