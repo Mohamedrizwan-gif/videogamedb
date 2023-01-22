@@ -17,7 +17,7 @@
                 Website:
                 <a class="game-tabs-link" href="{{game?.website}}" target="_blank">{{game?.website}}</a>
             </p>
-            <div class="game-description">{{game?.description}}</div>
+            <div class="game-description">{{game?.description_raw}}</div>
             <p class="game-tabs-votes">
                 <ng-container *ngFor="let rating of game?.ratings">
                     <span *ngIf="rating.title === 'exceptional'">
@@ -34,8 +34,8 @@
         <mat-tab label="Screenshots">
             <img
                 class="game-screenshot"
-                *ngFor="let screenshot of game?.screenshots"
-                src="{{screenshot?.image}}"
+                *ngFor="let screenshot of game?.tags"
+                src="{{screenshot?.image_background}}"
                 alt="screenshot"
             />
         </mat-tab>

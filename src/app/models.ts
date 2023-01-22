@@ -5,13 +5,14 @@ export interface Game {
     released: string;
     metacritic_url: string;
     website: string;
-    description: string;
+    description_raw: string;
     metacritic: number;
     ganres: Array<Genre>;
     parent_platforms: Array<ParentPlatform>;
     publishers: Array<Publishers>;
     ratings: Array<Rating>;
-    screenshots: Array<Screenshots>;
+    tags: Array<{ image_background: string }>
+    // screenshots: Array<Screenshots>;
     trailers: Array<Trailer>;
 }
 
